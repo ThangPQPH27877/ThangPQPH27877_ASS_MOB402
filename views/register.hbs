@@ -1,0 +1,62 @@
+<body class="bg-body-tertiary p-5" background="https://haycafe.vn/wp-content/uploads/2021/12/Hinh-nen-mau-trang-dep-nhat.jpg">
+  <div class="container">
+    <div class="row">
+      <h1 class="text-center">Đăng Ký Tài Khoản</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row w-50 m-auto mt-5">
+      <form action="/register" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="rsemail" class="form-label">Nhập Email</label>
+          <input
+            name="rsemail"
+            type="email"
+            class="form-control"
+            id="rsemail"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="rsname" class="form-label">Nhập Họ Tên</label>
+          <input
+            name="rsname"
+            type="text"
+            class="form-control"
+            id="rsname"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="rspassword" class="form-label">Mật Khẩu</label>
+          <input
+            name="rspassword"
+            type="password"
+            class="form-control"
+            id="rspassword"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="rsrepassword" class="form-label">Nhập Lại Mật Khẩu</label>
+          <input
+            name="rsrepassword"
+            type="password"
+            class="form-control"
+            id="rsrepassword"
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            name="myFile"
+            class="form-control form-control-lg"
+            id="formFileLg"
+            type="file"
+          />
+        </div>
+        <div class="row w-25 m-auto">
+          <button type="submit" class="btn btn-primary">Đăng kí</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>

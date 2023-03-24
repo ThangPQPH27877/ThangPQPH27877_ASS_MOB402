@@ -1,0 +1,50 @@
+<script>
+  toast('success', 'register success');
+</script>
+<body class="bg-body-tertiary p-5" background="https://nordvpn.com/wp-content/uploads/what-is-hacker-new-featured.png">
+  <div class="container"
+   style="background-color: white; width: 750px;height: 600px; margin-top: 100px; border-radius: 10px;">
+  <div class="container" >
+    <div class="row" >
+      <h1 class="text-center" style="margin-top: 80px;">Login</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row w-50 m-auto mt-5">
+      <form action="/login" method="POST">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input
+            name="email"
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Mật Khẩu</label>
+          <input
+            name="password"
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+        <div class="mb-3 form-check">
+          <input
+            name="checkbox"
+            type="checkbox"
+            class="form-check-input"
+            id="exampleCheck1"
+          />
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <div class="row w-25 m-auto">
+          <button type="submit" class="btn btn-primary">Đăng nhập</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+</body>

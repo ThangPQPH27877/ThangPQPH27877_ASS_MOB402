@@ -1,0 +1,380 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+      integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/sweetaleart.js"></script>
+    <style>
+      img{ width: 110; height: 110; border-radius: 100px; }
+    </style>
+    <title>Shop Quần Áo</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/home">Shop Quần Áo</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="/home"
+                  >Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    User
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/home">List Users</a></li>
+                    <li><a class="dropdown-item" href="/products">List Products</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <form
+                action="/home/search"
+                method="post"
+                class="d-flex"
+                role="search"
+              >
+                <input
+                  name="txtSearch"
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search by email"
+                  aria-label="Search"
+                  re
+                />
+                <button
+                  class="btn btn-outline-success"
+                  type="submit"
+                >Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="row bg-secondary-subtle">
+        <h1>List User</h1>
+        <nav aria-label="breadcrumb">
+
+        </nav>
+      </div>
+    </div>
+    <div style="margin-left: 10px;">
+      <button
+        type="button"
+        class="btn btn-info"
+        data-bs-toggle="modal"
+        data-bs-target="#addUser"
+      >
+        Add user
+      </button>
+    </div>
+    <!-- The Modal -->
+    <div class="modal" id="addUser">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Add User</h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form method="POST" action="/home/add-user">
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Enter link
+                  image user</label>
+                <input
+                  value=""
+                  name="img"
+                  type="text"
+                  class="form-control"
+                  id="img"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Enter name
+                  user</label>
+                <input
+                  value=""
+                  name="name"
+                  type="text"
+                  class="form-control"
+                  id="name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Enter id
+                  user</label>
+                <input
+                  value=""
+                  name="id"
+                  type="text"
+                  class="form-control"
+                  id="id"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Enter
+                  email user</label>
+                <input
+                  value=""
+                  name="email"
+                  type="email"
+                  class="form-control"
+                  id="name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Enter
+                  password user</label>
+                <input
+                  value=""
+                  name="password"
+                  type="text"
+                  class="form-control"
+                  id="name"
+                />
+              </div>
+              <button type="submit" class="btn btn-danger">Yes</button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >No</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row m-auto p-3">
+        <table class="table table-striped text-center">
+          <thead>
+            <tr>
+              <th scope="col-2">STT</th>
+              <th scope="col">Image</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Password</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each user}}
+              <tr>
+                <th scope="row">{{this.id}}</th>
+                <td><img alt="" src={{this.img}} /></td>
+                <td>{{this.name}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.password}}</td>
+                <td>
+                  <div class="container mt-3">
+                    <button
+                      type="button"
+                      class="btn btn-danger"
+                      data-bs-toggle="modal"
+                      data-bs-target="#delateModel{{this.id}}"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                  <!-- The Modal -->
+                  <div class="modal" id="delateModel{{this.id}}">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title">Do You Want To Remove This
+                            User</h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+                        <div class="modal-footer">
+                          <form method="POST" action="/home/delete">
+                            <input
+                              type="hidden"
+                              name="itemId"
+                              value="{{this.id}}"
+                            />
+                            <button
+                              type="submit"
+                              class="btn btn-danger"
+                            >Yes</button>
+                          </form>
+                          <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                          >No</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container mt-3">
+                    <button
+                      type="button"
+                      class="btn btn-warning"
+                      data-bs-toggle="modal"
+                      data-bs-target="#editUser{{this.id}}"
+                    >
+                      Edit
+                    </button>
+                  </div>
+                  <!-- The Modal -->
+                  <div class="modal" id="editUser{{this.id}}">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title">Do You Want To Edit This User</h4>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                          ></button>
+                        </div>
+                        <div class="modal-body">
+                          <form method="POST" action="/home/edit">
+                            <div class="mb-3">
+                              <label
+                                for="exampleInputPassword1"
+                                class="form-label"
+                              >Enter link image user</label>
+                              <input
+                                value={{this.img}}
+                                name="img"
+                                type="text"
+                                class="form-control"
+                                id="img"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label
+                                for="exampleInputPassword1"
+                                class="form-label"
+                              >Enter email user</label>
+                              <input
+                                value={{this.email}}
+                                name="email"
+                                type="email"
+                                class="form-control"
+                                id="email"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label
+                                for="exampleInputPassword1"
+                                class="form-label"
+                              >Enter name user</label>
+                              <input
+                                value={{this.name}}
+                                name="name"
+                                type="text"
+                                class="form-control"
+                                id="name"
+                              />
+                            </div>
+                            <div class="mb-3">
+                              <label
+                                for="exampleInputPassword1"
+                                class="form-label"
+                              >Enter password user</label>
+                              <input
+                                value={{this.password}}
+                                name="password"
+                                type="text"
+                                class="form-control"
+                                id="name"
+                              />
+                            </div>
+                            <input
+                              type="hidden"
+                              name="itemId"
+                              value="{{this.id}}"
+                            />
+                            <button
+                              type="submit"
+                              class="btn btn-danger"
+                            >Yes</button>
+                            <button
+                              type="button"
+                              class="btn btn-secondary"
+                              data-bs-dismiss="modal"
+                            >No</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script>
+      toast('success', 'login success');
+    </script>
+  </body>
+</html>
